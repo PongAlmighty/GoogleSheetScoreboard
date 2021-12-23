@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<body onLoad="loadData();">
+<div style="position:absolute;top:0px;left:0px;width:800px;height:450px;background:#00ff00;">
+</div>
+<div align="center" style="position:absolute;top:0px;left:26%">
+<span style="position:relative;top:0.2em;font-family:Roboto;font-size:2.0em;font-weight:600;color:#ffffff;">Leader Board</span>
+</div>
+<div id="leaderboard1"><div>
+<script src="players.js"></script>
+<script>
+function leaderboard(players) {
+  return players.sort((a, b) => b.points - a.points);
+}
+function loadData() {
+	let players=[];
+	let bots=json['Bot Name'];
+	let tokens=json['Tokens'];
+	var result="";
+	for(i=0; i<99; i++) {
+	  var tmp=bots[i];
+	  if(tmp != undefined) {
+		result+=bots[i]+" "+tokens[i]+"<br>\n";
+		players.push({name:bots[i],points:tokens[i]});
+	  }
+	 }
+	players=leaderboard(players);
+	var output="";
+	var ytop=50;
+	var yoff=40;
+	var fsize="1.4em";
+	for(i=0; i<10; i++) {
+	output +='"<div style="width:12%;text-align:right;position:absolute;top:'+(i*yoff+ytop)+'px;left:1rem;">';
+	output +='<span style="font-family:Roboto;font-size:'+fsize+';font-weight:600;color:#ffffff;">';
+	output +=(i+1) + " )" +'</span></div>';
+	output +='"<div style="width:30%;text-align:right;position:absolute;top:'+(i*yoff+ytop)+'px;left:1rem;">';
+	output +='<span style="font-family:Roboto;font-size:'+fsize+';font-weight:600;color:#ffffff;">';
+	output +=players[i].name+'</span>';
+	output +='</div>';
+	output +='"<div style="position:absolute;top:'+(i*yoff+ytop)+'px;left:30rem;">';
+	output +='<span style="font-family:Roboto;font-size:'+fsize+';font-weight:600;color:#ffffff;">';
+	output +=players[i].points+' Chips</span>';
+	output +='</div>';
+	}
+	document.getElementById("leaderboard1").innerHTML = output;
+}
+function update1(){
+  loadData();
+}
+setInterval(update1,12000);
+</script>
+</body>
+</html>

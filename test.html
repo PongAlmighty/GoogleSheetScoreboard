@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="myCanvas" width="1920" height="1080"
+style="border:1px solid #00ff00;">
+Your browser does not support the canvas element.
+</canvas>
+<script src="players.js"></script>
+<script src="canvas.js"></script>
+<script>
+  // Comments And Notes Here!
+  // https://dev.to/thehomelessdev/how-to-add-a-custom-font-to-an-html-canvas-1m3g
+  //
+</script>
+<script>
+  function leaderboard(players) {
+  return players.sort((a, b) => b.points - a.points);
+}
+var players=[];
+let bots=json['Bot Name'];
+let tokens=json['Tokens'];
+	var result="";
+	for(i=0; i<99; i++) {
+	  var tmp=bots[i];
+	  if(tmp != undefined) {
+		players.push({name:bots[i],points:tokens[i]});
+	  }
+	 }
+	players=leaderboard(players);
+
+var canvas = document.getElementById("myCanvas");
+var ctx=canvas.getContext("2d");
+ctx.fillStyle = "#00ff00";
+//ctx.fillRect(0, 0, 1920,1080);
+ctx.font="600 56px myFont"; 
+//ctx.fillStyle = "white";
+ctx.textAlign = "left";
+var yoff=100;
+for(i=0; i<10; i++) {
+  ctx.textAlign = "right";
+  ctx.fillText((i+1)+".", 100, i*yoff+100);
+  ctx.textAlign = "left";
+  ctx.fillText(players[i].name, 200, i*yoff+100);
+  ctx.textAlign = "right";
+  ctx.fillText(players[i].points , 1200, i*yoff+100);
+}
+</script>
+</body>
+</html>
