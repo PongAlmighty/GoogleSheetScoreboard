@@ -16,10 +16,10 @@
 	</style>
 </head>
 
-<body class="p1" style="" onLoad="loadData();">
+<body style="" onLoad="loadData();">
 	<div style="position:absolute;top:0px;left:0px;width:1920px;height:1080px;background:#00ff00;">
     
-    <div align="center" style="position: relative; left: 0px; top:20px; width: 100%;">
+    <div align="center" style="position: absolute  ; left: 0px; top:20px; width: 1920px;">
     
       <span class="p1" style="color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600; ">HIGH SCORES:</span>
     </div>
@@ -30,6 +30,8 @@
 	<div id="leaderboard1"></div>
 	<script src="players.js">
 	</script>
+
+
 
 	<script>
 		function leaderboard(players) {
@@ -64,28 +66,30 @@ function loadData() {
   
   for(i=0; i<len1; i++) {
   //players.foreach(i=>{});
-    var textSizePct = ((players[i].points) / totalPoints )
+    var textSizePct = ((players[i].points) / totalPoints - .07 ) 
     var playerSize = (800 * textSizePct) + 'px'
 
 
-    output +='"<div class="p1" style="font-size: ' + playerSize + ';width:8%;text-align:right;position:relative;top:'+(playerSize)+'px;left:1px;">';
-    output +=(i+1) + ")" +'</div>';
+    output +='"<div class="p1" style="font-size: ' + playerSize + ';width:100%;text-align:left;position:relative;top:'+(playerSize)+'px;left:1px;">';
+    output +=(i+1) + ")  " + players[i].name + "   " + players[i].points; // +'</div>';
     
-    output +='"<div class="p1" style="font-size: ' + playerSize + ';width:70%;text-align:left;position:relative;top:'+(playerSize)+'px;left:20rem;">';
-    output +=players[i].name;
-    output +='</div>';
+    // output +='"<div class="p1" style="font-size: ' + playerSize + ';width:70%;text-align:left;position:relative;top:'+(playerSize)+'px;left:20rem;">';
+    //output +=players[i].name;
+    // output +='</div>';
       
-    output +='"<div class="p1" style="font-size: ' + playerSize + ';position:absolute;text-align:right;top:'+(playerSize)+'px;left:80rem;">';
-    output +=players[i].points;
+    // output +='"<div class="p1" style="font-size: ' + playerSize + ';position:absolute;text-align:right;top:'+(playerSize)+'px;left:80rem;">';
+    // output +=players[i].points;
     //output +=totalPoints;
     output +='</div>';
 
-    
- 
-    
 	}
+  
+
 	document.getElementById("leaderboard1").innerHTML = output;
 }
+
+
+
 function update1(){
   loadData();
 }
