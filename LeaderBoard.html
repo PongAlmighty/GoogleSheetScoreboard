@@ -57,7 +57,7 @@ function loadData() {
 	var output="";
 	var ytop=110;
   var playerLen;
-	var yoff=(890 / len1 );
+	var yoff=(900 / len1 );
   // dynamic font size below
   var totalPoints = players.map(item => item.points).reduce((prev, curr) => prev + curr,0);
   
@@ -66,9 +66,12 @@ function loadData() {
   
   for(i=0; i<len1; i++) {
   //players.foreach(i=>{});
-    var textSizePct = ((players[i].points) / totalPoints - .07 ) 
-    var playerSize = (800 * textSizePct) + 'px'
+    var textSizePct = ((players[i].points) / totalPoints ) 
+    var playerSize = (700 * textSizePct) + 'px'
 
+    if (i=0) {
+
+    }
 
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:100%;text-align:left;position:relative;top:'+(playerSize)+'px;left:1px;">';
     output +=(i+1) + ")  " + players[i].name + "   " + players[i].points; // +'</div>';
