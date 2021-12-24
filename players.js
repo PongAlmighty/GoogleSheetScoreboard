@@ -19,7 +19,7 @@ function getRow(total, count, name, score){
     if (score > 0) {
         cssStyle = ' style="font-size:' +  (800 * (score / total)) + 'px;" '
     }
-    return '<div ' + cssStyle + '>' + count + ') ' + name + ' ' + score + '</div>';
+    return '<tr  ' + cssStyle + '><td>' + count + ')</td><td> ' + name + ' ' + score + '</td></tr>';
 }
 
 function loadData() {

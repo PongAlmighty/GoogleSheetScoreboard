@@ -1,4 +1,4 @@
-#leaderboard div div {
+#leaderboard tr {
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     text-shadow: 3px 3px red;
@@ -25,4 +25,7 @@
     font-weight: 600;
     font-size: 60px;
     text-align: center;
+}
+tbody tr:first-child {
+    text-align: right;
 }

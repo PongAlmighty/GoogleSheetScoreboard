@@ -12,7 +12,9 @@
     <body>
         <div id="leaderboard">
             <div id="title">HIGH SCORES:</div>
-            <div id="leaders"></div>
+            <table>
+              <tbody id="leaders"></tbody>
+            </table>
         </div>
         <script>
             loadData();
