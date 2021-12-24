@@ -55,22 +55,30 @@ function loadData() {
 
   // dynamic font size below
   var totalPoints = players.map(item => item.points).reduce((prev, curr) => prev + curr,0);
-  
+  var defaultSize = (900 / len1)
+  defaultSize = defaultSize.toFixed(0);
 
   
   
   for(i=0; i<len1; i++) {
 
     var textSizePct = ((players[i].points) / totalPoints ) 
-    var playerSize = (700 * textSizePct) + 'px'
+    textSizePct = textSizePct.toFixed(2);
+    var textAmtAdd = (defaultSize * textSizePct)
+    //var playerSize = (800 * textSizePct) //+ 'px'
+    var playerSize = (defaultSize + textAmtAdd)
+    playerSize = (playerSize.toFixed(0)) + 'px';
 
     if (i==0) {
       output +='"<div class="p1" vertical-align: text-top; text-align: center; align="center" style="position: relative; top:0px; width: 1920px; color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600;">' + "HIGH SCORES:" + '</span>';
+      output += 'def:' + (defaultSize);
       output +='</div>';
     }
 
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:100%;text-align:left;position:relative;top:'+(playerSize)+'px;left:1px;">';
     output +=(i+1) + ")  " + players[i].name + "   " + players[i].points; 
+    output += ' TSP:' + (textSizePct);
+    output += ' PS:' + (playerSize);
     output +='</div>';
 
 	}
