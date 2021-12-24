@@ -1,0 +1,17 @@
+#leaderboard div {
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    text-shadow: 3px 3px red;
+    text-transform: uppercase;
+    padding-bottom: 1%;
+}
+#leaderboard {
+    position:absolute;
+    top: 0px;
+    padding-top:20px;
+    padding-left:20px;
+    left: 0px;
+    width: 1920px;
+    height: 1080px;
+    background: #00ff00;
+}
