@@ -20,8 +20,8 @@ Display a real time scoreboard on a web page from a Google Sheet.
 
 ## How it works
 
-The HTML page is loaded is empty.  It then makes an AJAX call to `sheet.json.php` which downloads the Google Sheet and returns up a cooked JSON object. The scripts in `players.js` then loop over the JSON and output a `<div/>` per player and score.
+The HTML page is loaded is empty.  It then calls `loadData()` which makes an AJAX call to `sheet.json.php` which downloads the Google Sheet and returns up a cooked JSON object. The scripts in `players.js` then loops over the JSON and output a `<div/>` per player and score. `
 
-The page will refresh every N seconds based on the value of `$refreshRate`.
+The page will refresh every N seconds based on the value of `$refreshRate` by repeatedly calling `loadData()`.
 
-If the total score is  `0`, all players are shown at font size `10px`. The moment someone scores a point. The moment one player scores a point, only them, and other players with more than `0` will show.  The higher your score the larger font size your player is shown in.
+If the total score is  `0`, all players are shown at font size `10px`. The moment someone scores a point, only them, and other players with more than `0`, will show.  The higher your score the larger font size your player is shown in.
