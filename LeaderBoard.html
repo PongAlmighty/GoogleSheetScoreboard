@@ -31,8 +31,6 @@
 	<script src="players.js">
 	</script>
 
-
-
 	<script>
 		function leaderboard(players) {
       const truePlayers = players.filter((f) => f.points > 0);
@@ -55,29 +53,36 @@ function loadData() {
 	players=leaderboard(players);
   var len1=players.length;
 	var output="";
-	var ytop=100;
+	var ytop=110;
   var playerLen;
-	var yoff=(1000 / len1 );
+	var yoff=(890 / len1 );
+  // dynamic font size below
+  var totalPoints = players.map(item => item.points).reduce((prev, curr) => prev + curr,0);
+  var spaceInc = 0
+
 	//yoff = 20;
-  //var fsize="2.5em";
-	
+  
   
   for(i=0; i<len1; i++) {
   //players.foreach(i=>{});
-  
-    var playerSize = ((players[i].points) + 50) + 'px'
+    var textSizePct = ((players[i].points) / totalPoints )
+    var playerSize = (yoff * textSizePct) + 'px'
+    
 
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:8%;text-align:right;position:absolute;top:'+(i*yoff+ytop)+'px;left:1px;">';
     output +=(i+1) + ")" +'</div>';
     
-    //output +='"<div class="p1" style="font-size:' + playerSize  + ';width:70%;">'
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:70%;text-align:left;position:absolute;top:'+(i*yoff+ytop)+'px;left:20rem;">';
     output +=players[i].name;
     output +='</div>';
       
     output +='"<div class="p1" style="font-size: ' + playerSize + ';position:absolute;text-align:right;top:'+(i*yoff+ytop)+'px;left:80rem;">';
     output +=players[i].points;
+    //output +=totalPoints;
     output +='</div>';
+
+    spaceInc += (spaceInc + playerSize)
+    
 	}
 	document.getElementById("leaderboard1").innerHTML = output;
 }
