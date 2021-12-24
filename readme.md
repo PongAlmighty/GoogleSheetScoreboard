@@ -24,4 +24,4 @@ The HTML page is loaded is empty.  It then calls `loadData()` which makes an AJA
 
 The page will refresh every N seconds based on the value of `$refreshRate` by repeatedly calling `loadData()`.
 
-If the total score is  `0`, all players are shown at font size `10px`. The moment someone scores a point, only them, and other players with more than `0`, will show.  The higher your score the larger font size your player is shown in.
+If your score is  `0` you do not show on the board. Any player with more than `0`, will show.  The higher your score the larger font size your player is shown in.

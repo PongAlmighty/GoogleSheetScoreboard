@@ -33,7 +33,7 @@ function loadData() {
 
                 for(const count in results.data){
                     const person = results.data[count];
-                    if (results.total == 0 || person.score > 0) {
+                    if (person.score > 0) {
                         leaderboard.innerHTML += getRow(
                             results.total,
                             (Number(count) + 1),
