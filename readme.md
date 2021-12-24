@@ -14,7 +14,7 @@ Display a real time scoreboard on a web page from a Google Sheet.
 1. Upload `sample.scoreboard.xlsx` to your Google account
 2. Make sure it's shared so the public can view it
 3. Get the ID from the URL of sheet
-4. Clone this repo.  If you're putting it dirrectly in the web directory, be sure the sensitive `.git` files are web readable.
+4. Clone this repo.  If you're putting it dirrectly in the web directory, be sure the sensitive `.git` files are **not** web readable.
 5. Copy 'config.dist.php' to `config.php`. Update the `$sheet_id` and `$sheet_name` and `$refreshRate` as needed. The refresh rate is in seconds
 6. Open a browser to your web server
 
