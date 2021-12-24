@@ -4,14 +4,8 @@
     text-shadow: 3px 3px red;
     text-transform: uppercase;
     padding-bottom: 1%;
-
-    /* thanks https://stackoverflow.com/a/45180740 */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    display: block;
-    line-height: 1em;
-    max-height: 1em;
+    
+    white-space: nowrap;
 }
 #leaderboard {
     position:absolute;
