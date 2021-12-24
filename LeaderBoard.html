@@ -52,35 +52,25 @@ function loadData() {
 	players=leaderboard(players);
   var len1=players.length;
 	var output="";
-	var ytop=110;
-  var playerLen;
-	var yoff=(700 / len1 );
+
   // dynamic font size below
   var totalPoints = players.map(item => item.points).reduce((prev, curr) => prev + curr,0);
   
-	//yoff = 20;
+
   
   
   for(i=0; i<len1; i++) {
-  //players.foreach(i=>{});
+
     var textSizePct = ((players[i].points) / totalPoints ) 
     var playerSize = (700 * textSizePct) + 'px'
 
     if (i==0) {
-      output +='"<div class="p1" vertical-align: text-top; text-align: center; align="center" style="position: relative; left: 0px; top:0px; width: 1920px; color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600;">' + "HIGH SCORES:" + '</span>';
+      output +='"<div class="p1" vertical-align: text-top; text-align: center; align="center" style="position: relative; top:0px; width: 1920px; color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600;">' + "HIGH SCORES:" + '</span>';
       output +='</div>';
     }
 
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:100%;text-align:left;position:relative;top:'+(playerSize)+'px;left:1px;">';
-    output +=(i+1) + ")  " + players[i].name + "   " + players[i].points; // +'</div>';
-    
-    // output +='"<div class="p1" style="font-size: ' + playerSize + ';width:70%;text-align:left;position:relative;top:'+(playerSize)+'px;left:20rem;">';
-    //output +=players[i].name;
-    // output +='</div>';
-      
-    // output +='"<div class="p1" style="font-size: ' + playerSize + ';position:absolute;text-align:right;top:'+(playerSize)+'px;left:80rem;">';
-    // output +=players[i].points;
-    //output +=totalPoints;
+    output +=(i+1) + ")  " + players[i].name + "   " + players[i].points; 
     output +='</div>';
 
 	}
