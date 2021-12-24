@@ -1,9 +1,17 @@
-#leaderboard div {
+#leaderboard div div {
     font-family: 'Press Start 2P', cursive;
     color: yellow;
     text-shadow: 3px 3px red;
     text-transform: uppercase;
     padding-bottom: 1%;
+
+    /* thanks https://stackoverflow.com/a/45180740 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: block;
+    line-height: 1em;
+    max-height: 1em;
 }
 #leaderboard {
     position:absolute;
@@ -14,4 +22,13 @@
     width: 1920px;
     height: 1080px;
     background: #00ff00;
+}
+#title {
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 3px 3px red;
+    color: orange;
+    width: 100%;
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
 }

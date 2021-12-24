@@ -11,6 +11,8 @@
     </head>
     <body>
         <div id="leaderboard">
+            <div id="title">HIGH SCORES:</div>
+            <div id="leaders"></div>
         </div>
         <script>
             loadData();

@@ -28,7 +28,7 @@ function loadData() {
             if (err !== null) {
                 console.log('Something went wrong fetching player JSON: ' + err);
             } else {
-                let leaderboard = document.getElementById('leaderboard');
+                let leaderboard = document.getElementById('leaders');
                 leaderboard.innerHTML = '';
 
                 for(const count in results.data){
