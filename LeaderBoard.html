@@ -19,10 +19,7 @@
 <body style="" onLoad="loadData();">
 	<div style="position:absolute;top:0px;left:0px;width:1920px;height:1080px;background:#00ff00;">
     
-    <div align="center" style="position: absolute  ; left: 0px; top:20px; width: 1920px;">
-    
-      <span class="p1" style="color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600; ">HIGH SCORES:</span>
-    </div>
+
 
 	</div>
 
@@ -57,7 +54,7 @@ function loadData() {
 	var output="";
 	var ytop=110;
   var playerLen;
-	var yoff=(900 / len1 );
+	var yoff=(700 / len1 );
   // dynamic font size below
   var totalPoints = players.map(item => item.points).reduce((prev, curr) => prev + curr,0);
   
@@ -69,8 +66,9 @@ function loadData() {
     var textSizePct = ((players[i].points) / totalPoints ) 
     var playerSize = (700 * textSizePct) + 'px'
 
-    if (i=0) {
-
+    if (i==0) {
+      output +='"<div class="p1" vertical-align: text-top; text-align: center; align="center" style="position: relative; left: 0px; top:0px; width: 1920px; color: orange; text-shadow: 3px 3px red;font-size:60px; font-weight:600;">' + "HIGH SCORES:" + '</span>';
+      output +='</div>';
     }
 
     output +='"<div class="p1" style="font-size: ' + playerSize + ';width:100%;text-align:left;position:relative;top:'+(playerSize)+'px;left:1px;">';
