@@ -49,7 +49,10 @@
 
 /* Sizes for scoring players trNum00 is default for all players past the 5th position */
 .trNum00{
-  font-size: 20px;
+  font-size: 21px;
+}
+.trNum00Plus{
+  font-size: 45px;
 }
 .trNum01{
   font-size: 90px;
