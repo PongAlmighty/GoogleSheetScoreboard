@@ -17,9 +17,9 @@ let getJSON = function(url, callback) {
 function getRow(totalPoints, totalPeople, count, name, score){
     let cssStyle= " class='trNum00' ";
     if (count > 0 && count < 6) {
-      cssStyle = " class='trNum0" + count + "' ";
+        cssStyle = " class='trNum0" + count + "' ";
     } else if (totalPeople < 15) {
-      cssStyle = " class='trNum00Plus' ";
+        cssStyle = " class='trNum00Plus' ";
     }
 
     return '<tr  ' + cssStyle + '>' +
@@ -42,12 +42,14 @@ function loadData() {
                     const person = results.data[count];
                     if (person.score > 0) {
                         leaderboard.innerHTML += getRow(
-                            results.total,
-                            results.data.length,
+                            results.totalScore,
+                            results.totalNonZeroPeople,
                             (Number(count) + 1),
                             person.name,
                             person.score
                         );
+                    } else {
+                        
                     }
                 }
             }

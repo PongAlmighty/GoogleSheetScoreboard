@@ -7,15 +7,19 @@ $fullData = json_decode(substr(file_get_contents($url), 47, -2), true);
 
 $playerData = $fullData['table']['rows'];
 $data = array();
-$total = 0;
+$totalScore = 0;
+$totalNonZeroPeople = 0;
 
 foreach($playerData as $row) {
     $playerName = $row['c'][0]['v'];
     $playerScore = $row['c'][1]['v'];
-    $total += $playerScore;
+    $totalScore += $playerScore;
+    if($playerScore > 0){
+        $totalNonZeroPeople += 1;
+    }
     $data[] = ['name' => $playerName, 'score' => $playerScore];
 }
 
 $scores = array_column($data, 'score');
 array_multisort($scores, SORT_DESC, $data);
-print  json_encode(['total' => $total, 'data' => $data]) ;
+print  json_encode(['totalScore' => $totalScore, 'totalNonZeroPeople ' => $totalNonZeroPeople, 'data' => $data]) ;
