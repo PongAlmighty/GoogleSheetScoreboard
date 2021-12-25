@@ -17,13 +17,15 @@ let getJSON = function(url, callback) {
 function getRow(total, count, name, score){
     let cssStyle = ' style="font-size: 10px;" '
     if (score > 0) {
-        cssStyle = ' style="font-size:' +  (60) + 'px;" '
         // no, the parens aren't needed but it's so I can put a variable back later
         // safety: cssStyle = ' style="font-size:' +  (800 * (score / total)) + 'px;" '
+        cssStyle = ' style="font-size:' +  (60) + 'px;" '
     }
-    // I regret nothing for my extra TD
-    return '<tr  ' + cssStyle + '><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td id = "plrName">'+ name +'</td><td id = "plrScore">'+ score +'</td></tr>';
-    //nbsp</td><td id = "plrName"> ' + name + ' ' + score + '</td></tr>';
+    return '<tr  ' + cssStyle + '>' +
+            '<td class="plrRnk">' + count + ')</td>' +
+            '<td class = "plrName">'+ name +'</td>' +
+            '<td class = "plrScore">'+ score +'</td>' +
+        '</tr>';
 }
 
 function loadData() {

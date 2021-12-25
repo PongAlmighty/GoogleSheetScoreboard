@@ -4,7 +4,6 @@
     text-shadow: 3px 3px red;
     text-transform: uppercase;
     padding-bottom: 1%;
-
     white-space: nowrap;
 }
 #leaderboard {
@@ -29,20 +28,11 @@
     font-size: 60px;
     text-align: center;
 }
-#plrRnk{
+.plrRnk{
+    padding-right: 50px;
     text-align: right;
     width: 200px;
 }
-#tdSpacer{
-    width: 50px;
-    font-size: 50px;
-}
-#plrName{
-    text-align: left;
-}
-#plrScore{
-    position: absolute;
-    left: 1750px;
-    align-content: left;
-    text-align: left;
+.plrName{
+    width: 1470px;
 }
