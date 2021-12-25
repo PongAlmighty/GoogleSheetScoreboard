@@ -29,9 +29,27 @@
     font-size: 60px;
     text-align: center;
 }
-#plrRnk{
+
+/* styles for the 3 main fields */
+.plrRnk{
+    padding-right: 50px;
     text-align: right;
     width: 175px;
+}
+.plrScore{
+    position: absolute;
+    width: 200px;
+    align-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.plrName {
+    width: 1470px;
+}
+
+/* Sizes for scoring players trNum00 is default for all players past the 5th position */
+.trNum00{
+  font-size: 20px;
 }
 .trNum01{
   font-size: 90px;
@@ -47,20 +65,4 @@
 }
 .trNum05{
   font-size: 55px
-}
-
-#tdSpacer{
-    width: 50px;
-    font-size: 20px;
-}
-#plrName{
-    text-align: left;
-    width: 1400px ;
-}
-#plrScore{
-    position: absolute;
-    width: 200px;
-    align-content: center;
-    text-align: center;
-    overflow: hidden;
 }

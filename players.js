@@ -15,28 +15,15 @@ let getJSON = function(url, callback) {
 };
 
 function getRow(total, count, name, score){
-    let cssStyle = ' style="font-size: 10px;" '
-    if (score > 0) {
-        
-        cssStyle = ' style="font-size:' +  (20) + 'px;" '
-        // no, the parens aren't needed but it's so I can put a variable back later
-        // safety: cssStyle = ' style="font-size:' +  (800 * (score / total)) + 'px;" '
-    
+    let cssStyle= " class='trNum00' ";
+    if (count > 0 && count < 6) {
+        cssStyle = " class='trNum0" + count + "' ";
     }
-    
-    if (count == 1) {
-      return '<tr class="trNum01"><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td  id = "plrName">'+ name +'</td><td  id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    } else if (count == 2) {
-      return '<tr class="trNum02"><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td  id = "plrName">'+ name +'</td><td  id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    } else if (count == 3) {
-      return '<tr class="trNum03"><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td  id = "plrName">'+ name +'</td><td  id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    } else if (count == 4) {
-      return '<tr class="trNum04"><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td  id = "plrName">'+ name +'</td><td  id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    } else if (count == 5) {
-      return '<tr class="trNum05"><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td  id = "plrName">'+ name +'</td><td  id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    } else {
-      return '<tr  ' + cssStyle + '><td id="plrRnk">' + count + ')</td><td id="tdSpacer">&nbsp</td><td id = "plrName">'+ name +'</td><td id = "plrScore">'+ score +'</td><td id="tdSpacer">&nbsp</td></tr>';
-    }
+    return '<tr  ' + cssStyle + '>' +
+            '<td class="plrRnk">' + count + ')</td>' +
+            '<td class="plrName">'+ name +'</td>' +
+            '<td class="plrScore">'+ score +'</td>' +
+        '</tr>';
 }
 
 function loadData() {
