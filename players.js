@@ -14,7 +14,7 @@ let getJSON = function(url, callback) {
     xhr.send();
 };
 
-function getRow(total, count, name, score){
+function getRow(totalPoints, totalPeople, count, name, score){
     let cssStyle= " class='trNum00' ";
     if (count > 0 && count < 6) {
         cssStyle = " class='trNum0" + count + "' ";
@@ -40,6 +40,7 @@ function loadData() {
                     if (person.score > 0) {
                         leaderboard.innerHTML += getRow(
                             results.total,
+                            results.data.length,
                             (Number(count) + 1),
                             person.name,
                             person.score
