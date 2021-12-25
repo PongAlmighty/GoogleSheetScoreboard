@@ -4,8 +4,8 @@
     text-shadow: 3px 3px red;
     text-transform: uppercase;
     padding-bottom: 1%;
-
     white-space: nowrap;
+    overflow: hidden;
 }
 #leaderboard {
     position:absolute;
@@ -31,29 +31,36 @@
 }
 #plrRnk{
     text-align: right;
-    width: 200px;
+    width: 175px;
 }
 .trNum01{
-  font-size: 195px;
-  height: 195px;
+  font-size: 90px;
 }
-#trNum02{
-  font-size: 90px
+.trNum02{
+  font-size: 80px
 }
-#trNum03{
-  font-size: 85px
+.trNum03{
+  font-size: 70px
+}
+.trNum04{
+  font-size: 60px
+}
+.trNum05{
+  font-size: 55px
 }
 
 #tdSpacer{
     width: 50px;
-    font-size: 50px;
+    font-size: 20px;
 }
 #plrName{
     text-align: left;
+    width: 1400px ;
 }
 #plrScore{
     position: absolute;
-    left: 1750px;
-    align-content: left;
-    text-align: left;
+    width: 200px;
+    align-content: center;
+    text-align: center;
+    overflow: hidden;
 }
