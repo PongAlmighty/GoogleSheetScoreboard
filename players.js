@@ -25,7 +25,7 @@ function getRow(totalPoints, totalPeople, count, name, score){
     return '<tr  ' + cssStyle + '>' +
             '<td class="plrRnk">' + count + ')</td>' +
             '<td class="plrName">'+ name +'</td>' +
-            '<td class="plrScore">'+ score +'</td>' +
+            '<td class="plrScore">'+ score + '</td>' +
         '</tr>';
 }
 
@@ -37,7 +37,7 @@ function loadData() {
             } else {
                 let leaderboard = document.getElementById('leaders');
                 leaderboard.innerHTML = '';
-
+                //alert(JSON.stringify(results));
                 for(const count in results.data){
                     const person = results.data[count];
                     if (person.score > 0) {

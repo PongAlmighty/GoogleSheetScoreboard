@@ -22,4 +22,4 @@ foreach($playerData as $row) {
 
 $scores = array_column($data, 'score');
 array_multisort($scores, SORT_DESC, $data);
-print  json_encode(['totalScore' => $totalScore, 'totalNonZeroPeople ' => $totalNonZeroPeople, 'data' => $data]) ;
+print  json_encode(['totalScore' => $totalScore, 'totalNonZeroPeople' => $totalNonZeroPeople, 'data' => $data]) ;
