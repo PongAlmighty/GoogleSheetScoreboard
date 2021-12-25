@@ -51,21 +51,31 @@
 .trNum00{
   font-size: 21px;
 }
-.trNum00Plus{
-  font-size: 45px;
+.trNumTierB{
+  font-size: 40px;
 }
+.trNumTierC{
+  font-size: 30px;
+}
+.trNumTierD{
+  font-size: 20px;
+}
+.trNumTierE{
+  font-size: 15px;
+}
+
 .trNum01{
-  font-size: 90px;
+  font-size: 80px;
 }
 .trNum02{
-  font-size: 80px
-}
-.trNum03{
   font-size: 70px
 }
-.trNum04{
+.trNum03{
   font-size: 60px
 }
+.trNum04{
+  font-size: 50px
+}
 .trNum05{
-  font-size: 55px
+  font-size: 45px
 }

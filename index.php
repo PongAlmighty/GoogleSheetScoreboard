@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        <div id="debug_message"></div>
         <div id="leaderboard">
             <div id="title">HIGH SCORES:</div>
             <table>

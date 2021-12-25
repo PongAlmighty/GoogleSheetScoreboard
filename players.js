@@ -15,17 +15,23 @@ let getJSON = function(url, callback) {
 };
 
 function getRow(totalPoints, totalPeople, count, name, score){
-    let cssStyle= " class='trNum00' ";
+    //let cssStyle= " class='trNum00' ";
     if (count > 0 && count < 6) {
-      cssStyle = " class='trNum0" + count + "' ";
-    } else if (totalPeople < 15) {
-      cssStyle = " class='trNum00Plus' ";
+        cssStyle = " class='trNum0" + count + "' ";
+    } else if (count < 10) {
+        cssStyle = " class='trNumTierB' ";
+    } else if (count < 16) {
+        cssStyle = " class='trNumTierC' ";
+    } else if (count < 22) {
+        cssStyle = " class='trNumTierD' ";
+    } else if (count < 25) {
+        cssStyle = " class='trNumTierE' ";
     }
 
     return '<tr  ' + cssStyle + '>' +
             '<td class="plrRnk">' + count + ')</td>' +
             '<td class="plrName">'+ name +'</td>' +
-            '<td class="plrScore">'+ score +'</td>' +
+            '<td class="plrScore">'+ score + '</td>' +
         '</tr>';
 }
 
@@ -37,17 +43,19 @@ function loadData() {
             } else {
                 let leaderboard = document.getElementById('leaders');
                 leaderboard.innerHTML = '';
-
+                //alert(JSON.stringify(results));
                 for(const count in results.data){
                     const person = results.data[count];
                     if (person.score > 0) {
                         leaderboard.innerHTML += getRow(
-                            results.total,
-                            results.data.length,
+                            results.totalScore,
+                            results.totalNonZeroPeople,
                             (Number(count) + 1),
                             person.name,
                             person.score
                         );
+                    } else {
+                        
                     }
                 }
             }
