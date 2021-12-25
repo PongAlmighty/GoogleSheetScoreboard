@@ -8,12 +8,12 @@ $fullData = json_decode(substr(file_get_contents($url), 47, -2), true);
 $playerData = $fullData['table']['rows'];
 $data = array();
 $total = 0;
+$playerCount = $data.Length;
 foreach($playerData as $row) {
     $playerName = $row['c'][0]['v'];
     $playerScore = $row['c'][1]['v'];
     $total += $playerScore;
     $data[] = ['name' => $playerName, 'score' => $playerScore];
-    //$playerCount = 
 }
 
 print  json_encode(['total' => $total, 'data' => $data]) ;
