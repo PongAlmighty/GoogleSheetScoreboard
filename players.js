@@ -18,6 +18,7 @@ function getRow(total, count, name, score){
     let cssStyle = ' style="font-size: 10px;" '
     if (score > 0) {
         cssStyle = ' style="font-size:' +  (60) + 'px;" '
+        // no, the parens aren't needed but it's so I can put a variable back later
         // safety: cssStyle = ' style="font-size:' +  (800 * (score / total)) + 'px;" '
     }
     // I regret nothing for my extra TD

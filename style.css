@@ -17,9 +17,7 @@
     height: 1080px;
     background: #00ff00;
     overflow: hidden;
-    -webkit-overflow-scrolling: {
-      display: none;
-    }
+    
 }
 #title {
     font-family: 'Press Start 2P', cursive;
@@ -41,11 +39,10 @@
 }
 #plrName{
     text-align: left;
-    
 }
 #plrScore{
     position: absolute;
-    left: 1800px;
+    left: 1750px;
     align-content: left;
     text-align: left;
 }

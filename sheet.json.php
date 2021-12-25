@@ -13,6 +13,7 @@ foreach($playerData as $row) {
     $playerScore = $row['c'][1]['v'];
     $total += $playerScore;
     $data[] = ['name' => $playerName, 'score' => $playerScore];
+    //$playerCount = 
 }
 
 print  json_encode(['total' => $total, 'data' => $data]) ;
