@@ -16,4 +16,6 @@ foreach($playerData as $row) {
     $data[] = ['name' => $playerName, 'score' => $playerScore];
 }
 
+$scores = array_column($data, 'score');
+array_multisort($scores, SORT_DESC, $data);
 print  json_encode(['total' => $total, 'data' => $data]) ;
