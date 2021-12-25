@@ -33,6 +33,17 @@
     text-align: right;
     width: 200px;
 }
+.trNum01{
+  font-size: 195px;
+  height: 195px;
+}
+#trNum02{
+  font-size: 90px
+}
+#trNum03{
+  font-size: 85px
+}
+
 #tdSpacer{
     width: 50px;
     font-size: 50px;
