@@ -15,11 +15,17 @@ let getJSON = function(url, callback) {
 };
 
 function getRow(totalPoints, totalPeople, count, name, score){
-    let cssStyle= " class='trNum00' ";
+    //let cssStyle= " class='trNum00' ";
     if (count > 0 && count < 6) {
         cssStyle = " class='trNum0" + count + "' ";
-    } else if (totalPeople < 15) {
-        cssStyle = " class='trNum00Plus' ";
+    } else if (count < 10) {
+        cssStyle = " class='trNumTierB' ";
+    } else if (count < 16) {
+        cssStyle = " class='trNumTierC' ";
+    } else if (count < 22) {
+        cssStyle = " class='trNumTierD' ";
+    } else if (count < 25) {
+        cssStyle = " class='trNumTierE' ";
     }
 
     return '<tr  ' + cssStyle + '>' +
