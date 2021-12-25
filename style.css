@@ -5,6 +5,7 @@
     text-transform: uppercase;
     padding-bottom: 1%;
     white-space: nowrap;
+    overflow: hidden;
 }
 #leaderboard {
     position:absolute;
@@ -28,11 +29,40 @@
     font-size: 60px;
     text-align: center;
 }
+
+/* styles for the 3 main fields */
 .plrRnk{
     padding-right: 50px;
     text-align: right;
-    width: 200px;
+    width: 175px;
 }
-.plrName{
+.plrScore{
+    position: absolute;
+    width: 200px;
+    align-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.plrName {
     width: 1470px;
+}
+
+/* Sizes for scoring players trNum00 is default for all players past the 5th position */
+.trNum00{
+  font-size: 20px;
+}
+.trNum01{
+  font-size: 90px;
+}
+.trNum02{
+  font-size: 80px
+}
+.trNum03{
+  font-size: 70px
+}
+.trNum04{
+  font-size: 60px
+}
+.trNum05{
+  font-size: 55px
 }
