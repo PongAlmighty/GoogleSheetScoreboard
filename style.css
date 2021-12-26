@@ -38,13 +38,13 @@
 }
 .plrScore{
     position: absolute;
-    width: 200px;
+    width: 210px;
     align-content: center;
     text-align: center;
     overflow: hidden;
 }
 .plrName {
-    width: 1470px;
+    width: 1450px;
 }
 
 /* Sizes for scoring players trNum00 is default for all players past the 5th position */

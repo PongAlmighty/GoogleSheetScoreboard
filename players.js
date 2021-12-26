@@ -18,17 +18,21 @@ let getJSON = function(url, callback) {
 function getRow(count, name, score, totalPeople){
 
     // now we need to actually set the size here, instead of in the classes
-    // "Xsm" set every one the same size, but the higher the rank the more red
-    // "Sml", gradient size from 55 down to 45
-    // "Med", gradient size from 55 down to... 35?
+    // "Xsm", gradient size from 95 down to 70 *To Do: Add colors to the top 5
+    // "Sml", gradient size from 95 down to 45
+    // "Med", gradient size from 75 down to 15
     // "Lge", gradient size from 55 down to 25(?)
 
     let dynSize;
 
-    if (totalPeople < 5) {
-        dynSize = 60;
-    } else if (totalPeople < 10) {
-        dynSize = scale(count, 1, totalPeople, 55, 45)
+    if (totalPeople <= 5) {
+        dynSize = scale(count, 1, totalPeople, 95, 70)
+    } else if (totalPeople <= 10) {
+        dynSize = scale(count, 1, totalPeople, 95, 70)
+    } else if (totalPeople <= 20) {
+        dynSize = scale(count, 1, totalPeople, 75, 15)
+    } else if (totalPeople > 20) {
+        dynSize = scale(count, 1, totalPeople, 45, 15)
     }
 
     return '<tr style="font-size:' + dynSize + 'px">' +
