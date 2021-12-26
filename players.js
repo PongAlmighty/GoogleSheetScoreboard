@@ -11,15 +11,48 @@ let getJSON = function(url, callback) {
             callback(status, xhr.response);
         }
     };
+    
     xhr.send();
 };
 
-function getRow(total, count, name, score){
-    let cssStyle = ' style="font-size: 10px;" '
-    if (score > 0) {
-        cssStyle = ' style="font-size:' +  (800 * (score / total)) + 'px;" '
+function getRow(count, name, score, totalPeople){
+
+    // now we need to actually set the size here, instead of in the classes
+    // "Xsm", gradient size from 95 down to 70 *To Do: Add colors to the top 5
+    // "Sml", gradient size from 95 down to 45
+    // "Med", gradient size from 75 down to 15
+    // "Lge", gradient size from 55 down to 25(?)
+
+    let dynSize;
+    let dynCol = 255; // <- amount of green in the text color
+
+    if (totalPeople <= 5) {
+        dynCol = scale(count, 1, totalPeople, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 95, 70)
+    } else if (totalPeople <= 10) {
+        dynCol = scale(count, 1, 5, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 95, 70)
+    } else if (totalPeople <= 15) {
+        dynCol = scale(count, 1, 5, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 85, 35)
+    } else if (totalPeople <= 20) {
+        dynCol = scale(count, 1, 5, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 75, 15)
+    } else if (totalPeople > 20) {
+        dynCol = scale(count, 1, 5, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 45, 15)
     }
-    return '<div ' + cssStyle + '>' + count + ') ' + name + ' ' + score + '</div>';
+
+    return '<tr style="font-size:' + dynSize + 'px; color:rgb(255, '+ dynCol + ',0);  ">' +
+            '<td class="plrRnk">' + count + ')</td>' +
+            '<td class="plrName">'+ name +'</td>' +
+            '<td class="plrScore">'+ score + '</td>' +
+        '</tr>';
+
+}
+
+function scale (number, inMin, inMax, outMin, outMax) {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
 
 function loadData() {
@@ -28,20 +61,24 @@ function loadData() {
             if (err !== null) {
                 console.log('Something went wrong fetching player JSON: ' + err);
             } else {
-                let leaderboard = document.getElementById('leaderboard');
+                let leaderboard = document.getElementById('leaders');
                 leaderboard.innerHTML = '';
 
                 for(const count in results.data){
                     const person = results.data[count];
-                    if (results.total == 0 || person.score > 0) {
+                    if (person.score > 0) {
                         leaderboard.innerHTML += getRow(
-                            results.total,
                             (Number(count) + 1),
                             person.name,
-                            person.score
+                            person.score,
+                            results.totalNonZeroPeople
                         );
                     }
                 }
             }
         });
+
 }
+
+
+

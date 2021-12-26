@@ -15,7 +15,7 @@ Display a real time scoreboard on a web page from a Google Sheet.
 2. Make sure it's shared so the public can view it
 3. Get the ID from the URL of sheet
 4. Clone this repo.  If you're putting it dirrectly in the web directory, be sure the sensitive `.git` files are **not** web readable.
-5. Copy `config.dist.php` to `config.php`. Update the `$sheet_id` and `$sheet_name` and `$refreshRate` as needed. The refresh rate is in seconds
+5. Copy `config.dist.php` to `config.php`. Update the `$sheet_id` and `$sheet_name` and `$refreshRate` as needed. The refresh rate is in seconds (needs to be in milliseconds)
 6. Open a browser to your web server
 
 ## How it works
@@ -24,4 +24,4 @@ The HTML page is loaded is empty.  It then calls `loadData()` which makes an AJA
 
 The page will refresh every N seconds based on the value of `$refreshRate` by repeatedly calling `loadData()`.
 
-If the total score is  `0`, all players are shown at font size `10px`. The moment someone scores a point, only them, and other players with more than `0`, will show.  The higher your score the larger font size your player is shown in.
+If your score is  `0` you do not show on the board. Any player with more than `0`, will show.  The higher your score the larger font size your player is shown in.
