@@ -17,42 +17,29 @@ let getJSON = function(url, callback) {
 
 function getRow(count, name, score, totalPeople){
 
-    // now we need to actually set the size here, instead of in the classes
-    // "Xsm", gradient size from 95 down to 70 *To Do: Add colors to the top 5
-    // "Sml", gradient size from 95 down to 45
-    // "Med", gradient size from 75 down to 15
-    // "Lge", gradient size from 55 down to 25(?)
-
     let dynSize;
-    let dynCol = 255; // <- amount of green in the text color
-
-    if (totalPeople <= 5) {
-        dynCol = scale(count, 1, totalPeople, 128, 255)
-        dynSize = scale(count, 1, totalPeople, 95, 70)
-    } else if (totalPeople <= 10) {
-        dynCol = scale(count, 1, 5, 128, 255)
-        dynSize = scale(count, 1, totalPeople, 95, 70)
+    if (totalPeople <= 10) {
+        dynSize = scale(count, totalPeople, 95, 70);
     } else if (totalPeople <= 15) {
-        dynCol = scale(count, 1, 5, 128, 255)
-        dynSize = scale(count, 1, totalPeople, 85, 35)
+        dynSize = scale(count, totalPeople, 85, 35);
     } else if (totalPeople <= 20) {
-        dynCol = scale(count, 1, 5, 128, 255)
-        dynSize = scale(count, 1, totalPeople, 75, 15)
-    } else if (totalPeople > 20) {
-        dynCol = scale(count, 1, 5, 128, 255)
-        dynSize = scale(count, 1, totalPeople, 45, 15)
+        dynSize = scale(count, totalPeople, 75, 15);
+    } else {
+        dynSize = scale(count, totalPeople, 45, 15);
     }
 
-    return '<tr style="font-size:' + dynSize + 'px; color:rgb(255, '+ dynCol + ',0);  ">' +
+    const dynCol = scale(count, 5, 128, 255); // <- amount of green in the text color
+
+    return '<tr style="font-size:' + dynSize + 'px; color:rgb(255, ' + dynCol + ',0);  ">' +
             '<td class="plrRnk">' + count + ')</td>' +
-            '<td class="plrName">'+ name +'</td>' +
-            '<td class="plrScore">'+ score + '</td>' +
+            '<td class="plrName">' + name + '</td>' +
+            '<td class="plrScore">' + score + '</td>' +
         '</tr>';
 
 }
 
-function scale (number, inMin, inMax, outMin, outMax) {
-    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+function scale (count, inMax, outMin, outMax) {
+    return (count - 1) * (outMax - outMin) / (inMax - 1) + outMin;
 }
 
 function loadData() {
@@ -61,7 +48,7 @@ function loadData() {
             if (err !== null) {
                 console.log('Something went wrong fetching player JSON: ' + err);
             } else {
-                let leaderboard = document.getElementById('leaders');
+                const leaderboard = document.getElementById('leaders');
                 leaderboard.innerHTML = '';
 
                 for(const count in results.data){
