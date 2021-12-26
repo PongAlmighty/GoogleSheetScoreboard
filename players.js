@@ -24,18 +24,26 @@ function getRow(count, name, score, totalPeople){
     // "Lge", gradient size from 55 down to 25(?)
 
     let dynSize;
+    let dynCol = 255; // <- amount of green in the text color
 
     if (totalPeople <= 5) {
+        dynCol = scale(count, 1, totalPeople, 128, 255)
         dynSize = scale(count, 1, totalPeople, 95, 70)
     } else if (totalPeople <= 10) {
+        dynCol = scale(count, 1, 5, 128, 255)
         dynSize = scale(count, 1, totalPeople, 95, 70)
+    } else if (totalPeople <= 15) {
+        dynCol = scale(count, 1, 5, 128, 255)
+        dynSize = scale(count, 1, totalPeople, 85, 35)
     } else if (totalPeople <= 20) {
+        dynCol = scale(count, 1, 5, 128, 255)
         dynSize = scale(count, 1, totalPeople, 75, 15)
     } else if (totalPeople > 20) {
+        dynCol = scale(count, 1, 5, 128, 255)
         dynSize = scale(count, 1, totalPeople, 45, 15)
     }
 
-    return '<tr style="font-size:' + dynSize + 'px">' +
+    return '<tr style="font-size:' + dynSize + 'px; color:rgb(255, '+ dynCol + ',0);  ">' +
             '<td class="plrRnk">' + count + ')</td>' +
             '<td class="plrName">'+ name +'</td>' +
             '<td class="plrScore">'+ score + '</td>' +

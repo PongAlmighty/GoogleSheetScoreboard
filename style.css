@@ -1,6 +1,6 @@
 #leaderboard tr {
     font-family: 'Press Start 2P', cursive;
-    color: yellow;
+    color: rgb(255, 255, 0);
     text-shadow: 3px 3px red;
     text-transform: uppercase;
     padding-bottom: 1%;
@@ -32,8 +32,8 @@
 
 /* styles for the 3 main fields */
 .plrRnk{
-    padding-right: 50px;
-    text-align: right;
+    padding-right: 30px;
+    text-align: center;
     width: 175px;
 }
 .plrScore{
@@ -44,8 +44,9 @@
     overflow: hidden;
 }
 .plrName {
-    width: 1450px;
+    width: 1400px;
 }
+
 
 /* Sizes for scoring players trNum00 is default for all players past the 5th position */
 .trNum00{
