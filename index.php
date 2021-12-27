@@ -20,6 +20,5 @@
             loadData();
             setInterval(loadData, <?php echo $refreshRate ?>000);
         </script>
-        
     </body>
 </html>
