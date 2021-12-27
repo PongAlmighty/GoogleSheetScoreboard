@@ -47,3 +47,5 @@ If your score is  `0` you do not show on the board. Any player with more than `0
       - change the resolution to 1920x1080
       - remove ALL css from the box in the middle
       - click OK to save.
+
+Thanks to Mr. Jones, JimF-YYC and Tydence!
