@@ -37,11 +37,11 @@ If your score is  `0` you do not show on the board. Any player with more than `0
    To add a Browser source to your scene:
    
    1. Click the plus button as shown below:
-      - ![Adding a browser source to OBS](./ScoreOBSHowTo.png)
+      - ![Adding a browser source to OBS](ScoreObsHowTo.png)
    2. Name this Source whatever you like and hit OK:
-      - ![Naming the source](./ScoreOBSHowTo01.png)
+      - ![Naming the source](ScoreObsHowTo.png)
    3. Modify the Properties screen as follows:
-      - ![Properties editing](./ScoreOBSHowTo02.png)
+      - ![Properties editing](ScoreObsHowTo02.png)
       - Change the URL field to the location and name of your Scoreboard install
         - This could be either your website, or in the case of using a Repl, you could use their link like this: "https://googledocsscoreboard.themightypong.repl.co/"
       - change the resolution to 1920x1080
