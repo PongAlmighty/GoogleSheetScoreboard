@@ -16,7 +16,7 @@ This was originally created to keep track of points during robot battles run by 
 
 ## Install 
 
-1. Create a google doc modeled after this one: [Link to google sheet](https://docs.google.com/spreadsheets/d/1eQHR3-sW3VcTmIQn3ybS6PctSjtD78Oip5J2cyl6Xdw/edit#gid=0). You can also see [sample.csv](./sample.csv) for a starter.  The net result should be a spreadhseet in Google Docs with a worksheet called `Sheet1`. Column A has a header and then a list of contestants.  Column B has a header and then a points for each contestant.
+1. Create a google doc modeled after this one: [Link to google sheet](https://docs.google.com/spreadsheets/d/1eQHR3-sW3VcTmIQn3ybS6PctSjtD78Oip5J2cyl6Xdw/edit#gid=0). You can also see [sample.csv](./sample.csv) for a starter.  The net result should be a spreadhseet in Google Docs with a worksheet called `Sheet1`. Column A has a header and then a list of contestants.  Column B has a header and then a points for each contestant. Other columns and worksheets can be added, but will be ignored.
 2. Make sure it's shared so the public can view it
 3. Get the ID from the URL of sheet (eg `1eQHR3-sW3VcTmIQn3ybS6PctSjtD78Oip5J2cyl6Xdw`)
 4. Clone this repo.  If you're putting it directly in the web directory, be sure the sensitive `.git` files are **not** web readable.
