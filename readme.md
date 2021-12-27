@@ -29,3 +29,21 @@ The HTML page is loaded as empty.  It then calls `loadData()` which makes an AJA
 The page will refresh every N seconds based on the value of `$refreshRate` by repeatedly calling `loadData()`.
 
 If your score is  `0` you do not show on the board. Any player with more than `0`, will show.  The higher your score the larger font size your player is shown in.
+
+## Using in OBS
+
+   This is meant to be used in OBS as a Browser Source. 
+   
+   To add a Browser source to your scene:
+   
+   1. Click the plus button as shown below:
+      - ![Adding a browser source to OBS](./ScoreOBSHowTo.png)
+   2. Name this Source whatever you like and hit OK:
+      - ![Naming the source](./ScoreOBSHowTo01.png)
+   3. Modify the Properties screen as follows:
+      - ![Properties editing](./ScoreOBSHowTo02.png)
+      - Change the URL field to the location and name of your Scoreboard install
+        - This could be either your website, or in the case of using a Repl, you could use their link like this: "https://googledocsscoreboard.themightypong.repl.co/"
+      - change the resolution to 1920x1080
+      - remove ALL css from the box in the middle
+      - click OK to save.
