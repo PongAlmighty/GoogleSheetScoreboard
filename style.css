@@ -4,6 +4,7 @@ body {
     text-shadow: 3px 3px red;
     text-align: center;
     margin: 0;
+    font-size: 21px;
 }
 
 /* set up the table row, title and body  */
@@ -39,24 +40,4 @@ body {
 .plrName {
     width: 1400px;
     text-align: left;
-}
-
-/* Sizes for scoring players trNum00 is default for all players past the 5th position */
-.trNum00{
-  font-size: 21px;
-}
-.trNum01{
-  font-size: 80px;
-}
-.trNum02{
-  font-size: 70px
-}
-.trNum03{
-  font-size: 60px
-}
-.trNum04{
-  font-size: 50px
-}
-.trNum05{
-  font-size: 45px
 }
