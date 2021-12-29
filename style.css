@@ -36,8 +36,10 @@ body {
 }
 .plrScore {
     width: 210px;
+    padding-left: 30px;
 }
 .plrName {
-    width: 1400px;
+    max-width: 1425px;
     text-align: left;
+    overflow: hidden;
 }
