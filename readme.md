@@ -44,11 +44,11 @@ This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wik
 
 2. Name this Source whatever you like and hit OK:
 
-   ![Naming the source](images/ScoreObsHowTo.png)
+   ![Naming the source](images/ScoreObsHowTo02.png)
 
 3. Modify the Properties screen as follows:
 
-   ![Properties editing](images/ScoreObsHowTo02.png)
+   ![Properties editing](images/ScoreObsHowTo03.png)
    - Change the URL field to the location and name of your Scoreboard install
      - This could be either your website, or in the case of using a Repl, you could use their link like this: "https://googledocsscoreboard.themightypong.repl.co/"
    - change the resolution to 1920x1080
