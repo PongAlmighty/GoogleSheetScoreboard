@@ -59,7 +59,7 @@ This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wik
    - change the resolution to 1920x1080
    - remove ALL css from the box in the middle
    - click OK to save.
-   - 
+
 ## Thanks To the Following Contributors
 Thanks to [mrjones](github.com/mrjones-plip/), JimF-YYC and Tydence!
 
