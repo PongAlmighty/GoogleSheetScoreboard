@@ -56,3 +56,8 @@ This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wik
    - click OK to save.
 
 Thanks to [mrjones](github.com/mrjones-plip/), JimF-YYC and Tydence!
+
+## JSON Article
+   Thanks to Merlin Schäfer's Article on towardsdatascience.com 
+      "Read Data from Google Sheets into Pandas without the Google Sheets API"
+      https://towardsdatascience.com/read-data-from-google-sheets-into-pandas-without-the-google-sheets-api-5c468536550
