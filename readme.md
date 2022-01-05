@@ -34,7 +34,7 @@ The page will refresh every N seconds based on the value of `$refreshRate` by re
 
 If your score is  `0` you do not show on the board. Any player with more than `0`, will show.  The top five contestants show in a larger font and different color.
 
-## JSON Article
+## Google Sheets / JSON Article
     Thanks to Merlin Schäfer's Article on towardsdatascience.com 
       "Read Data from Google Sheets into Pandas without the Google Sheets API"
       https://towardsdatascience.com/read-data-from-google-sheets-into-pandas-without-the-google-sheets-api-5c468536550
