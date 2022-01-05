@@ -34,6 +34,11 @@ The page will refresh every N seconds based on the value of `$refreshRate` by re
 
 If your score is  `0` you do not show on the board. Any player with more than `0`, will show.  The top five contestants show in a larger font and different color.
 
+## JSON Article
+   **Thanks** to ** Merlin Schäfer's** Article on towardsdatascience.com 
+      "Read Data from Google Sheets into Pandas without the Google Sheets API"
+      https://towardsdatascience.com/read-data-from-google-sheets-into-pandas-without-the-google-sheets-api-5c468536550
+
 ## Using in OBS
 
 This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wiki/Sources-Guide#browser-source). It leverages the green background to use it as a chroma key to overlay on other layers. To add a Browser Source to your scene:
@@ -54,10 +59,7 @@ This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wik
    - change the resolution to 1920x1080
    - remove ALL css from the box in the middle
    - click OK to save.
-
+   - 
+## Thanks To the Following Contributors
 Thanks to [mrjones](github.com/mrjones-plip/), JimF-YYC and Tydence!
 
-## JSON Article
-   Thanks to Merlin Schäfer's Article on towardsdatascience.com 
-      "Read Data from Google Sheets into Pandas without the Google Sheets API"
-      https://towardsdatascience.com/read-data-from-google-sheets-into-pandas-without-the-google-sheets-api-5c468536550
