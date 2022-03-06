@@ -13,11 +13,12 @@ $totalNonZeroPeople = 0;
 foreach($playerData as $row) {
     $playerName = $row['c'][0]['v'];
     $playerScore = $row['c'][1]['v'];
+    $playerVersusState = $row['c'][2]['v'];
     $totalScore += $playerScore;
     if($playerScore > 0){
         $totalNonZeroPeople += 1;
     }
-    $data[] = ['name' => $playerName, 'score' => $playerScore];
+    $data[] = ['name' => $playerName, 'score' => $playerScore, 'vstate' => $playerVersusState];
 }
 
 $scores = array_column($data, 'score');
