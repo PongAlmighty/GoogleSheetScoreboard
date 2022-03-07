@@ -8,6 +8,10 @@ The raw output of this app has a "HIGH SCORES:" title, and then a tabular, enume
 
 This was originally created to keep track of points during robot battles run by [Vegas Combat Robtics Club](https://vegascombatrobotics.com/) and [Synshop](https://synhop.org).
 
+# Versus Page
+
+Using versus.php will give you a page with only the teams that are currently fighting. This is limited to whatever two teams have a 1 in the 5th column of the google doc.
+
 ## Prerequisites
 
 1. Webserver with PHP
@@ -58,6 +62,7 @@ This is meant to be used in [OBS as a Browser Source](https://obsproject.com/wik
 
 ## Thanks To the Following Contributors
 Thanks to [mrjones](github.com/mrjones-plip/), JimF-YYC and Tydence!
+Also to [brettowe](https://github.com/brettowe) for the vs. screen!
 
 Inspired by Merlin Schäfer's Article on towardsdatascience.com 
 "Read Data from Google Sheets into Pandas without the Google Sheets API"
