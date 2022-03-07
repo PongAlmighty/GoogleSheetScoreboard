@@ -11,13 +11,15 @@ $totalScore = 0;
 $totalNonZeroPeople = 0;
 
 foreach($playerData as $row) {
+    // expected sheet columns are: Name, Score, Captian, Comments, Versus state
     $playerName = $row['c'][0]['v'];
     $playerScore = $row['c'][1]['v'];
+    $playerVersusState = $row['c'][4]['v'];
     $totalScore += $playerScore;
     if($playerScore > 0){
         $totalNonZeroPeople += 1;
     }
-    $data[] = ['name' => $playerName, 'score' => $playerScore];
+    $data[] = ['name' => $playerName, 'score' => $playerScore, 'vstate' => $playerVersusState];
 }
 
 $scores = array_column($data, 'score');
